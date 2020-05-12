@@ -20,15 +20,15 @@ instructions to manipulate it. The goal of this project is to create an interpre
 
 #### Compilation command
 
-´´ $ gcc -Wall -Werror -Wextra -pedantic *.c -o monty ´´
+     $ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 
 #### Monty file example
 
 ´´´
-	push 1
-	push 2
-	push 3
-	pall
+ push 1
+ push 2
+ push 3
+ pall
 ´´´
 
 
@@ -44,16 +44,16 @@ The monty program runs the bytecodes line by line and stop if either:
 ##### Errors list
 
 ´´´
-	USAGE: monty <file>
-	Error: Can't open file <file>
-	Error: malloc failed
-	L<line_number>: usage: push integer
-	L<line_number>: can't pint, stack empty
-	L<line_number>: can't pop an empty stack
-	L<line_number>: can't swap, stack too short
-	L<line_number>: can't add, stack too short
-	L<line_number>: can't sub, stack too short
-	L<line_number>: can't div, stack too short
-	L<line_number>: division by zero
-	L<line_number>: unknown instruction <opcode>
+ USAGE: monty <file>
+ Error: Can't open file <file>
+ Error: malloc failed
+ L<line_number>: usage: push integer
+ L<line_number>: can't pint, stack empty
+ L<line_number>: can't pop an empty stack
+ L<line_number>: can't swap, stack too short
+ L<line_number>: can't add, stack too short
+ L<line_number>: can't sub, stack too short
+ L<line_number>: can't div, stack too short
+ L<line_number>: division by zero
+ L<line_number>: unknown instruction <opcode>
 ´´´
