@@ -30,16 +30,17 @@ The monty program runs the bytecodes line by line and stop if either:
 
 #### Monty file example
 
-     push 1
-     push 2
-     push 3
-     pall
+     $ cat -e bytecodes/00.m
+     push 1$
+     push 2$
+     push 3$
+     pall$
 
-     $ monty ./code.m
-
+     $ ./monty bytecodes/00.m
      3
      2
      1
+     $
 
 #### Errors
 
