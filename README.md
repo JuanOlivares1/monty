@@ -28,6 +28,29 @@ The monty program runs the bytecodes line by line and stop if either:
 
      $ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 
+#### Monty opcodes
+
+     #mandatoy
+     push <data>    #add element at stak
+     pall           #prints all the values on the stack
+     pint           #prints the value at the top of the stack
+     pop	    #removes the top element of the stack
+     swap	    #swaps the top two elements of the stack
+     add	    #adds the top two elements of the stack
+     nop	    #doesn’t do anything
+
+     #optional
+     sub	    #subtracts the top 2 elements of stack (1, 10, 3 = 1, 7)
+     div	    #divides the top 2 elements of stack
+     mul	    #multiplies the top 2 elements of stack
+     mod	    #computes the module of the top 2 elements of stack
+     pchar	    #prints the char at the top of the stack
+     pstr	    #prints the string starting at the top of the stack, followed by a new line
+     rotl	    #The top element of the stack becomes the last one, and the second top element of the stack becomes the first one
+     rotr	    #The last element of the stack becomes the top element of the stack
+     stack	    #sets the format of the data to a stack (LIFO)
+     queue	    #sets the format of the data to a queue (FIFO)
+
 #### Monty file example
 
      $ cat -e bytecodes/00.m
