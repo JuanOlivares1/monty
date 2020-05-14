@@ -1,5 +1,6 @@
 #ifndef MONTY
 #define MONTY
+
 /* Libraries */
 #include <stdio.h>
 #include <stdlib.h>
@@ -8,10 +9,6 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
-
-/* Global variables */
-char *file, *token;
-int data;
 
 /* Structs */
 /**
@@ -60,5 +57,10 @@ void push_err(char *msg, int ln, stack_t *stack);
 
 /* Prototypes - main */
 instruction_t *c_options(instruction_t **array1);
+
+/* Global variables */
+char *file, *token;
+int data;
+instruction_t *array;
 
 #endif

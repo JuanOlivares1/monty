@@ -1,8 +1,7 @@
 #include "monty.h"
 /**
- * push - add element to stack
+ * isempty - tells if the stack is empty
  * @stack: top
- * @ln: line number
  *
  * Return: 0 is empty, -1 not empty, 1 only one node
  */

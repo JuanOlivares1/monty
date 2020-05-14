@@ -12,7 +12,6 @@ int main(int ac, char **av)
 	int fd, i, ln = 0;
 	char *content;
 	stack_t *stack = NULL;
-	instruction_t *array;
 
 	if (ac != 2)
 		print_err("USAGE: monty <file>\n");
@@ -26,11 +25,13 @@ int main(int ac, char **av)
 	{
 		ln++;
 		for (i = 0; array; i++)
+		{
 			if (strcmp(array[i].opcode, token) == 0)
 			{
 				array[i].f(&stack, ln);
 				break;
 			}
+		}
 		token = strtok(NULL, "\n\t ");
 	}
 	free(array);

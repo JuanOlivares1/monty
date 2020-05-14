@@ -32,6 +32,7 @@ void push_err(char *msg, int ln, stack_t *stack)
 {
 	fprintf(stderr, "L%d", ln);
 	fprintf(stderr, "%s\n", msg);
+	free(array);
 	free_dlistint(stack);
 	exit(EXIT_FAILURE);
 }
