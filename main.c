@@ -27,7 +27,7 @@ int main(int ac, char **av)
 		cpy = strdup(token);
 		if (cpy == NULL)
 			print_err("Error: malloc failed");
-		for (i = 0; i < 4; i++)
+		for (i = 0; i < 5; i++)
 		{
 			f = 1;
 			if (strcmp(array[i].opcode, token) == 0)
@@ -57,7 +57,7 @@ instruction_t *c_options(instruction_t **array1)
 {
 	instruction_t *array = *array1;
 
-	array = malloc(sizeof(instruction_t) * 5);
+	array = malloc(sizeof(instruction_t) * 6);
 	if (array == NULL)
 		print_err("Error: malloc failed");
 	array[0].opcode = "push";
@@ -68,5 +68,7 @@ instruction_t *c_options(instruction_t **array1)
 	array[2].f = &pint;
 	array[3].opcode = "pop";
 	array[3].f = &pop;
+	array[4].opcode = "swap";
+	array[4].f = &swap;
 	return (array);
 }

@@ -41,3 +41,25 @@ void pop(stack_t **stack, unsigned int ln)
 		free(old);
 	}
 }
+
+/**
+ * swap - swaps top 2 nodes
+ * @stack: top
+ * @ln: line number
+ */
+void swap(stack_t **stack, unsigned int ln)
+{
+	int answ;
+	stack_t *temp, *second, *top = *stack;
+
+	answ = isempty(stack);
+        if (answ == 1 || answ == 0)
+                push_err(": can't swap, stack too short", ln, *stack);
+	second = top->next;
+	temp = second->next;
+	second->prev = NULL;
+	second->next = top;
+	top->prev = second;
+	top->next = temp;
+	*stack = second;
+}
