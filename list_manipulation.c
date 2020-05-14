@@ -83,7 +83,7 @@ void free_dlistint(stack_t *head)
 	if (head == NULL)
 		return;
 
-	while(head != NULL)
+	while (head != NULL)
 	{
 		temp = head;
 		head = head->next;
