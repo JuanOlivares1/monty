@@ -10,7 +10,8 @@
 #include <fcntl.h>
 
 /* Global variables */
-char *file;
+char *file, *token;
+int data;
 
 /* Structs */
 /**
@@ -40,13 +41,12 @@ typedef struct stack_s
 typedef struct instruction_s
 {
         char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+        void (*f)(stack_t **stack, unsigned int ln);
 } instruction_t;
 
 /* Prototypes - list manipulation*/
-size_t dlistint_len(const stack_t *h);
-size_t print_dlistint(const stack_t *h);
-stack_t *add_dnodeint(stack_t **head, const int n);
+void push(stack_t **stack, unsigned int ln);
+void pall(stack_t **stack, unsigned int ln);
 void free_dlistint(stack_t *head);
 
 /* Prototypes - file manipulation */
@@ -54,7 +54,11 @@ int open_file(void);
 char *read_file(int fd);
 
 /* Prototypes - errors */
-void print_err(char *msj);
-void open_f_err(char *msj);
+void print_err(char *msg);
+void open_f_err(char *msg);
+void push_err(char *msg, int ln, stack_t *stack);
+
+/* Prototypes - main */
+instruction_t *c_options(instruction_t **array1);
 
 #endif
