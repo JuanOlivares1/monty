@@ -48,6 +48,7 @@ void pall(stack_t **stack, unsigned int ln);
 void pint(stack_t **stack, unsigned int ln);
 void pop(stack_t **stack, unsigned int ln);
 void swap(stack_t **stack, unsigned int ln);
+void add(stack_t **stack, unsigned int ln);
 void free_dlistint(stack_t *head);
 
 /* Prototypes - file manipulation */

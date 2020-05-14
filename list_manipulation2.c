@@ -53,8 +53,8 @@ void swap(stack_t **stack, unsigned int ln)
 	stack_t *temp, *second, *top = *stack;
 
 	answ = isempty(stack);
-        if (answ == 1 || answ == 0)
-                push_err(": can't swap, stack too short", ln, *stack);
+	if (answ == 1 || answ == 0)
+		push_err(": can't swap, stack too short", ln, *stack);
 	second = top->next;
 	temp = second->next;
 	second->prev = NULL;
@@ -62,4 +62,23 @@ void swap(stack_t **stack, unsigned int ln)
 	top->prev = second;
 	top->next = temp;
 	*stack = second;
+}
+
+/**
+ * add - adds top 2 nodes
+ * @stack: top
+ * @ln: line number
+ */
+void add(stack_t **stack, unsigned int ln)
+{
+	int answ, temp;
+	stack_t *top = *stack;
+
+	answ = isempty(stack);
+	if (answ == 1 || answ == 0)
+		push_err(": can't add, stack too short", ln, *stack);
+	temp = top->n;
+	pop(stack, ln);
+	top = *stack;
+	top->n += temp;
 }
