@@ -25,16 +25,18 @@ int isempty(stack_t **stack)
 void push(stack_t **stack, unsigned int ln)
 {
 	stack_t *new, *current = *stack;
-	int empty, i = 0;
+	int empty, i = 1;
 
 	token = strtok(NULL, "\n\t ");
+	if (token == NULL)
+		push_err(": usage: push integer", ln, *stack);
 	if (strcmp(token, "0") == 0)
 		data = 0;
 	if (strcmp(token, "0") != 0)
 	{
 		while (token[i] != '\0')
 		{
-			if ((token[i] < 48 || token[i] > 57) && token[i] != 45)
+			if (token[i] < 48 || token[i] > 57)
 				push_err(": usage: push integer", ln, *stack);
 			i++;
 		}

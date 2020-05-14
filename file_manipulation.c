@@ -5,14 +5,19 @@
  *
  * Return: fd of opened file or error
  */
-int open_file(void)
+FILE *open_file(void)
 {
-	int fd_file;
+	fd = fopen(file , "r");
+	if(fd == NULL)
+		open_f_err("Error: Can't open file ");
+	return (fd);
+        /*int fd_file;
 
 	fd_file = open(file, O_RDONLY);
 	if (fd_file == -1)
 		open_f_err("Error: Can't open file ");
 	return (fd_file);
+*/
 }
 
 /**

@@ -53,7 +53,7 @@ void nop(stack_t **stack, unsigned int ln);
 void free_dlistint(stack_t *head);
 
 /* Prototypes - file manipulation */
-int open_file(void);
+FILE *open_file(void);
 char *read_file(int fd);
 
 /* Prototypes - errors */
@@ -67,6 +67,7 @@ instruction_t *c_options(instruction_t **array1);
 
 /* Global variables */
 char *file, *token, *cpy;
+FILE *fd;
 int data;
 instruction_t *array;
 
