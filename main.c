@@ -71,8 +71,8 @@ instruction_t *c_options(instruction_t **array1)
 	array[4].opcode = "swap";
 	array[4].f = &swap;
 	array[5].opcode = "add";
-        array[5].f = &add;
+	array[5].f = &add;
 	array[6].opcode = "nop";
-        array[6].f = &nop;
+	array[6].f = &nop;
 	return (array);
 }
