@@ -44,7 +44,7 @@ void push_err(char *msg, int ln, stack_t *stack)
  */
 void inv_op_err(char *msg, int ln, char *option, stack_t *stack)
 {
-	fprintf(stderr, "L%d%s<%s>\n", ln, msg, option);
+	fprintf(stderr, "L<%d>%s<%s>\n", ln, msg, option);
 	free(option);
 	free(array);
 	free_dlistint(stack);
