@@ -45,6 +45,7 @@ int main(int ac, char **av)
 		//token = strtok(NULL, "\n\t ");
 		//free(cpy);
 	}
+	fclose(fd);
 	free(array);
 	free_dlistint(stack);
 	return (0);
