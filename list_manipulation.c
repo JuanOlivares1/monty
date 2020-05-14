@@ -34,7 +34,7 @@ void push(stack_t **stack, unsigned int ln)
 	{
 		data = atoi(token);
 		if (data == 0)
-			push_err(": usage: push <int>", ln, *stack);
+			push_err(": usage: push integer", ln, *stack);
 	}
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)

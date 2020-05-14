@@ -44,6 +44,7 @@ typedef struct instruction_s
 /* Prototypes - list manipulation*/
 void push(stack_t **stack, unsigned int ln);
 void pall(stack_t **stack, unsigned int ln);
+void pint(stack_t **stack, unsigned int ln);
 void free_dlistint(stack_t *head);
 
 /* Prototypes - file manipulation */
