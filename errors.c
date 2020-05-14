@@ -6,7 +6,7 @@
  */
 void print_err(char *msg)
 {
-	write(2, msg, strlen(msg));
+	fprintf(stderr, "%s\n", msg);
 	exit(EXIT_FAILURE);
 }
 
@@ -16,9 +16,8 @@ void print_err(char *msg)
  */
 void open_f_err(char *msg)
 {
-	write(2, msg, strlen(msg));
-	write(2, file, strlen(file));
-	write(2, "\n", 1);
+	fprintf(stderr, "%s", msg);
+	fprintf(stderr, "%s\n", file);
 	exit(EXIT_FAILURE);
 }
 
@@ -30,9 +29,23 @@ void open_f_err(char *msg)
  */
 void push_err(char *msg, int ln, stack_t *stack)
 {
-	fprintf(stderr, "L%d", ln);
-	fprintf(stderr, "%s\n", msg);
+	fprintf(stderr, "L%d%s\n", ln, msg);
 	free(array);
 	free_dlistint(stack);
 	exit(EXIT_FAILURE);
+}
+
+/**
+ * inv_op_err - prints error in stderr
+ * @msg: message to send
+ * @ln: linenumber
+ * @option: option
+ */
+void inv_op_err(char *msg, int ln, char *option, stack_t *stack)
+{
+	fprintf(stderr, "L%d%s<%s>\n", ln, msg, option);
+	free(option);
+	free(array);
+        free_dlistint(stack);
+        exit(EXIT_FAILURE);
 }

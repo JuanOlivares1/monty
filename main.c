@@ -9,8 +9,8 @@
  */
 int main(int ac, char **av)
 {
-	int fd, i, ln = 0;
-	char *content;
+	int fd, i, ln = 0, f = 1;
+	char *content, *cpy;
 	stack_t *stack = NULL;
 
 	if (ac != 2)
@@ -24,15 +24,23 @@ int main(int ac, char **av)
 	while (token != NULL)
 	{
 		ln++;
-		for (i = 0; array; i++)
+		cpy = strdup(token);
+		if (cpy == NULL)
+			print_err("Error: malloc failed");
+		for (i = 0; i < 2; i++)
 		{
+			f = 1;
 			if (strcmp(array[i].opcode, token) == 0)
 			{
 				array[i].f(&stack, ln);
+				f = 0;
 				break;
 			}
 		}
+		if (f == 1)
+			inv_op_err(": unknown instruction ", ln, cpy, stack);
 		token = strtok(NULL, "\n\t ");
+		free(cpy);
 	}
 	free(array);
 	free_dlistint(stack);

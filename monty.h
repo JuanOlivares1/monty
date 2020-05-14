@@ -54,6 +54,7 @@ char *read_file(int fd);
 void print_err(char *msg);
 void open_f_err(char *msg);
 void push_err(char *msg, int ln, stack_t *stack);
+void inv_op_err(char *msg, int ln, char *option, stack_t *stack);
 
 /* Prototypes - main */
 instruction_t *c_options(instruction_t **array1);
