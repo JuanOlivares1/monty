@@ -10,7 +10,7 @@
 int main(int ac, char **av)
 {
 	int fd, i, ln = 0, f = 1;
-	char *content, *cpy;
+	char *content;
 	stack_t *stack = NULL;
 
 	if (ac != 2)
@@ -38,7 +38,7 @@ int main(int ac, char **av)
 			}
 		}
 		if (f == 1)
-			inv_op_err(": unknown instruction ", ln, cpy, stack);
+			inv_op_err(": unknown instruction ", ln, stack);
 		token = strtok(NULL, "\n\t ");
 		free(cpy);
 	}
