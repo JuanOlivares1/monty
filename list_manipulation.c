@@ -78,9 +78,15 @@ void pall(stack_t **stack, unsigned int ln __attribute__((unused)))
  */
 void free_dlistint(stack_t *head)
 {
+	stack_t *temp;
+
 	if (head == NULL)
 		return;
 
-	free_dlistint(head->next);
-	free(head);
+	while(head != NULL)
+	{
+		temp = head;
+		head = head->next;
+		free(temp);
+	}
 }
