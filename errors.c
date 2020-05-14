@@ -40,12 +40,13 @@ void push_err(char *msg, int ln, stack_t *stack)
  * @msg: message to send
  * @ln: linenumber
  * @option: option
+ * @stack: stack
  */
 void inv_op_err(char *msg, int ln, char *option, stack_t *stack)
 {
 	fprintf(stderr, "L%d%s<%s>\n", ln, msg, option);
 	free(option);
 	free(array);
-        free_dlistint(stack);
-        exit(EXIT_FAILURE);
+	free_dlistint(stack);
+	exit(EXIT_FAILURE);
 }
