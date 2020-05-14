@@ -32,7 +32,7 @@ void push(stack_t **stack, unsigned int ln)
 		data = 0;
 	if (strcmp(token, "0") != 0)
 	{
-		while(token[i] != '\0')
+		while (token[i] != '\0')
 		{
 			if ((token[i] < 48 || token[i] > 57) && token[i] != 45)
 				push_err(": usage: push integer", ln, *stack);

@@ -23,17 +23,18 @@ void pint(stack_t **stack, unsigned int ln)
  */
 void pop(stack_t **stack, unsigned int ln)
 {
-        int answ;
-        stack_t *old;
+	int answ;
+	stack_t *old;
 
-        answ = isempty(stack);
-        if (answ == 0)
-                push_err(": can't pop an empty stack", ln, *stack);
+	answ = isempty(stack);
+	if (answ == 0)
+		push_err(": can't pop an empty stack", ln, *stack);
 	else if (answ == 1)
 	{
 		free(*stack);
 		*stack = NULL;
-	} else {
+	} else
+	{
 		old = *stack;
 		*stack = (*stack)->next;
 		(*stack)->prev = NULL;

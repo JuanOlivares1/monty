@@ -67,6 +67,6 @@ instruction_t *c_options(instruction_t **array1)
 	array[2].opcode = "pint";
 	array[2].f = &pint;
 	array[3].opcode = "pop";
-        array[3].f = &pop;
+	array[3].f = &pop;
 	return (array);
 }
