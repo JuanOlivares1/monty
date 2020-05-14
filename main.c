@@ -20,7 +20,7 @@ int main(int ac, char **av)
 	content = read_file(fd);
 	close(fd);
 	array = c_options(&array);
-	token = strtok(content,"\n\t ");
+	token = strtok(content, "\n\t ");
 	while (token != NULL)
 	{
 		ln++;
@@ -40,8 +40,10 @@ int main(int ac, char **av)
 }
 
 /**
- * options - main function
- * @array: array
+ * c_options - main function
+ * @array1: array
+ *
+ * Return: array
  */
 instruction_t *c_options(instruction_t **array1)
 {

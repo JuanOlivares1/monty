@@ -24,7 +24,7 @@ void open_f_err(char *msg)
 
 /**
  * push_err - prints error in stderr
- * @msj: message to send
+ * @msg: message to send
  * @ln: linenumber
  * @stack: stack
  */

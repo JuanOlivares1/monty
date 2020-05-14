@@ -63,10 +63,10 @@ void pall(stack_t **stack, unsigned int ln __attribute__((unused)))
 {
 	stack_t *top = *stack;
 
-	while(top != NULL)
+	while (top != NULL)
 	{
 		printf("%d\n", top->n);
-	        top = top->next;
+		top = top->next;
 	}
 }
 
