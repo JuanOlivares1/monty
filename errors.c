@@ -33,7 +33,7 @@ void open_f_err(char *msg)
  */
 void push_err(char *msg, int ln, stack_t *stack)
 {
-	fprintf(stderr, "L<%d>%s\n", ln, msg);
+	fprintf(stderr, "L%d%s\n", ln, msg);
 	free(array);
 	free(cpy);
 	free_dlistint(stack);
@@ -48,7 +48,7 @@ void push_err(char *msg, int ln, stack_t *stack)
  */
 void inv_op_err(char *msg, int ln, stack_t *stack)
 {
-	fprintf(stderr, "L<%d>%s<%s>\n", ln, msg, cpy);
+	fprintf(stderr, "L%d%s%s\n", ln, msg, cpy);
 	free(cpy);
 	free(array);
 	free_dlistint(stack);
