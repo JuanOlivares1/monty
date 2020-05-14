@@ -10,7 +10,6 @@
 int main(int ac, char **av)
 {
 	int  i, ln = 0, f = 1;
-	//char *content;
 	char str[320];
 	stack_t *stack = NULL;
 
@@ -18,15 +17,10 @@ int main(int ac, char **av)
 		print_err("USAGE: monty <file>\n");
 	file = av[1];
 	fd = open_file();
-	//content = read_file(fd);
-	//close(fd);
 	array = c_options(&array);
-	//token = strtok(content, "\n\t ");
-	//while (token != NULL)*/
 	while(fgets(str, 320, fd) != NULL)
 	{
 		ln++;
-		//cpy = strdup(token);
 		token = strtok(str, "\n\t ");
 	        if (token == NULL)
 			continue;
@@ -42,8 +36,6 @@ int main(int ac, char **av)
 		}
 		if (f == 1)
 			inv_op_err(": unknown instruction ", ln, stack);
-		//token = strtok(NULL, "\n\t ");
-		//free(cpy);
 	}
 	fclose(fd);
 	free(array);

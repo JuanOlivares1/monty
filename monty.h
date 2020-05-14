@@ -66,7 +66,7 @@ void inv_op_err(char *msg, int ln, stack_t *stack);
 instruction_t *c_options(instruction_t **array1);
 
 /* Global variables */
-char *file, *token, *cpy;
+char *file, *token;
 FILE *fd;
 int data;
 instruction_t *array;
