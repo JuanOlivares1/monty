@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * pall - prints all stack
+ * pint - prints top
  * @stack: top
  * @ln: line number
  */
