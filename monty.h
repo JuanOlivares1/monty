@@ -42,6 +42,7 @@ typedef struct instruction_s
 } instruction_t;
 
 /* Prototypes - list manipulation*/
+int isempty(stack_t **stack);
 void push(stack_t **stack, unsigned int ln);
 void pall(stack_t **stack, unsigned int ln);
 void pint(stack_t **stack, unsigned int ln);
