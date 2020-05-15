@@ -12,7 +12,7 @@ void mod(stack_t **stack, unsigned int ln)
 
 	answ = isempty(stack);
 	if (answ == 1 || answ == 0)
-		op_err(": can't div, stack too short", ln, *stack);
+		op_err(": can't mod, stack too short", ln, *stack);
 	if (top->n == 0)
 		op_err(": division by zero", ln, *stack);
 	temp = top->n;
