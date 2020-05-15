@@ -16,7 +16,7 @@ void mod(stack_t **stack, unsigned int ln)
 	if (top->n == 0)
 		op_err(": division by zero", ln, *stack);
 	temp = top->n;
-        pop(stack, ln);
-        top = *stack;
-        top->n %= temp;
+	pop(stack, ln);
+	top = *stack;
+	top->n %= temp;
 }

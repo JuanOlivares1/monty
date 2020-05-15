@@ -73,10 +73,10 @@ instruction_t *c_options(instruction_t **array1)
 	array[7].opcode = "sub";
 	array[7].f = &sub;
 	array[8].opcode = "div";
-        array[8].f = &div2;
+	array[8].f = &div2;
 	array[9].opcode = "mul";
-        array[9].f = &mul;
+	array[9].f = &mul;
 	array[10].opcode = "mod";
-        array[10].f = &mod;
+	array[10].f = &mod;
 	return (array);
 }
