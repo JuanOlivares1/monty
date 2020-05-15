@@ -22,7 +22,7 @@ int main(int ac, char **av)
 	{
 		ln++;
 		token = strtok(str, "\n\t ");
-		if (token == NULL)
+		if (token == NULL || token[0] == '#')
 			continue;
 		for (i = 0; i < 11; i++)
 		{
