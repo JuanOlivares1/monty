@@ -26,12 +26,12 @@ void open_f_err(char *msg)
 }
 
 /**
- * push_err - prints error in stderr
+ * op_err - prints error in stderr
  * @msg: message to send
  * @ln: linenumber
  * @stack: stack
  */
-void push_err(char *msg, int ln, stack_t *stack)
+void op_err(char *msg, int ln, stack_t *stack)
 {
 	fprintf(stderr, "L%d%s\n", ln, msg);
 	free(array);

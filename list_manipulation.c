@@ -29,7 +29,7 @@ void push(stack_t **stack, unsigned int ln)
 
 	token = strtok(NULL, "\n\t ");
 	if (token == NULL)
-		push_err(": usage: push integer", ln, *stack);
+		op_err(": usage: push integer", ln, *stack);
 	if (strcmp(token, "0") == 0)
 		data = 0;
 	if (strcmp(token, "0") != 0)
@@ -37,12 +37,12 @@ void push(stack_t **stack, unsigned int ln)
 		while (token[i] != '\0')
 		{
 			if (token[i] < 48 || token[i] > 57)
-				push_err(": usage: push integer", ln, *stack);
+				op_err(": usage: push integer", ln, *stack);
 			i++;
 		}
 		data = atoi(token);
 		if (data == 0)
-			push_err(": usage: push integer", ln, *stack);
+			op_err(": usage: push integer", ln, *stack);
 	}
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)

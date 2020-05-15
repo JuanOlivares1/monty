@@ -18,11 +18,11 @@ int main(int ac, char **av)
 	file = av[1];
 	fd = open_file();
 	array = c_options(&array);
-	while(fgets(str, 320, fd) != NULL)
+	while (fgets(str, 320, fd) != NULL)
 	{
 		ln++;
 		token = strtok(str, "\n\t ");
-	        if (token == NULL)
+		if (token == NULL)
 			continue;
 		for (i = 0; i < 7; i++)
 		{

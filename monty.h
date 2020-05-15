@@ -54,12 +54,11 @@ void free_dlistint(stack_t *head);
 
 /* Prototypes - file manipulation */
 FILE *open_file(void);
-char *read_file(int fd);
 
 /* Prototypes - errors */
 void print_err(char *msg);
 void open_f_err(char *msg);
-void push_err(char *msg, int ln, stack_t *stack);
+void op_err(char *msg, int ln, stack_t *stack);
 void inv_op_err(char *msg, int ln, stack_t *stack);
 
 /* Prototypes - main */
