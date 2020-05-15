@@ -30,9 +30,9 @@ void push(stack_t **stack, unsigned int ln)
 	token = strtok(NULL, "\n\t ");
 	if (token == NULL)
 		op_err(": usage: push integer", ln, *stack);
-	if (strcmp(token, "0") == 0)
+	if (strcmp(token, "0") == 0 || strcmp(token, "-0") == 0)
 		data = 0;
-	if (strcmp(token, "0") != 0)
+	else if (strcmp(token, "0") != 0)
 	{
 		while (token[i] != '\0')
 		{
