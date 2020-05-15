@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * mod - divides top 2 nodes
+ * mod - finds the module of top 2 nodes
  * @stack: top
  * @ln: line number
  */
@@ -19,4 +19,23 @@ void mod(stack_t **stack, unsigned int ln)
 	pop(stack, ln);
 	top = *stack;
 	top->n %= temp;
+}
+
+/**
+ * pchar - prints the ascii equivalent of data
+ * @stack: top
+ * @ln: line number
+ */
+void pchar(stack_t **stack, unsigned int ln)
+{
+        int answ;
+        stack_t *top = *stack;
+
+        answ = isempty(stack);
+        if (answ == 0)
+                op_err(": can't pchar, stack empty", ln, *stack);
+	if (top->n >= 0 && top->n <= 127)
+		printf("%c\n", top->n);
+	else
+		op_err(": can't pchar, value out of range", ln, *stack);
 }

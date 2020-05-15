@@ -24,7 +24,7 @@ int main(int ac, char **av)
 		token = strtok(str, "\n\t ");
 		if (token == NULL || token[0] == '#')
 			continue;
-		for (i = 0; i < 11; i++)
+		for (i = 0; i < 12; i++)
 		{
 			f = 1;
 			if (strcmp(array[i].opcode, token) == 0)
@@ -53,7 +53,7 @@ instruction_t *c_options(instruction_t **array1)
 {
 	instruction_t *array = *array1;
 
-	array = malloc(sizeof(instruction_t) * 12);
+	array = malloc(sizeof(instruction_t) * 13);
 	if (array == NULL)
 		print_err("Error: malloc failed");
 	array[0].opcode = "push";
@@ -78,5 +78,7 @@ instruction_t *c_options(instruction_t **array1)
 	array[9].f = &mul;
 	array[10].opcode = "mod";
 	array[10].f = &mod;
+	array[11].opcode = "pchar";
+        array[11].f = &pchar;
 	return (array);
 }
