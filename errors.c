@@ -7,8 +7,6 @@
 void print_err(char *msg)
 {
 	fprintf(stderr, "%s\n", msg);
-	free(array);
-	fclose(fd);
 	exit(EXIT_FAILURE);
 }
 

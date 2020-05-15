@@ -14,7 +14,7 @@ int main(int ac, char **av)
 	stack_t *stack = NULL;
 
 	if (ac != 2)
-		print_err("USAGE: monty file\n");
+		print_err("USAGE: monty file");
 	file = av[1];
 	fd = open_file();
 	array = c_options(&array);
