@@ -19,7 +19,6 @@ void open_f_err(char *msg)
 	fprintf(stderr, "%s", msg);
 	fprintf(stderr, "%s\n", file);
 	free(array);
-	fclose(fd);
 	exit(EXIT_FAILURE);
 }
 
