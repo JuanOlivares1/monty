@@ -28,14 +28,37 @@ void mod(stack_t **stack, unsigned int ln)
  */
 void pchar(stack_t **stack, unsigned int ln)
 {
-        int answ;
-        stack_t *top = *stack;
+	int answ;
+	stack_t *top = *stack;
 
-        answ = isempty(stack);
-        if (answ == 0)
-                op_err(": can't pchar, stack empty", ln, *stack);
+	answ = isempty(stack);
+	if (answ == 0)
+		op_err(": can't pchar, stack empty", ln, *stack);
 	if (top->n >= 0 && top->n <= 127)
 		printf("%c\n", top->n);
 	else
 		op_err(": can't pchar, value out of range", ln, *stack);
+}
+
+/**
+ * pstr - prints the ascii equivalent of data
+ * @stack: top
+ * @ln: line number
+ */
+void pstr(stack_t **stack, unsigned int ln)
+{
+	int answ;
+	stack_t *top = *stack;
+
+	answ = isempty(stack);
+	if (answ == 0)
+		op_err(": can't pchar, stack empty", ln, *stack);
+	while (top != NULL)
+	{
+		if (top->n < 1 || top->n > 127)
+			break;
+		printf("%c", top->n);
+		top = top->next;
+	}
+	printf("\n");
 }

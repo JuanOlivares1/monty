@@ -55,6 +55,7 @@ void div2(stack_t **stack, unsigned int ln);
 void mul(stack_t **stack, unsigned int ln);
 void mod(stack_t **stack, unsigned int ln);
 void pchar(stack_t **stack, unsigned int ln);
+void pstr(stack_t **stack, unsigned int ln);
 void free_dlistint(stack_t *head);
 
 /* Prototypes - file manipulation */
