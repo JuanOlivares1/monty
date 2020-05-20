@@ -45,14 +45,10 @@ void pchar(stack_t **stack, unsigned int ln)
  * @stack: top
  * @ln: line number
  */
-void pstr(stack_t **stack, unsigned int ln)
+void pstr(stack_t **stack, unsigned int ln __attribute__((unused)))
 {
-	int answ;
 	stack_t *top = *stack;
 
-	answ = isempty(stack);
-	if (answ == 0)
-		op_err(": can't pchar, stack empty", ln, *stack);
 	while (top != NULL)
 	{
 		if (top->n < 1 || top->n > 127)
